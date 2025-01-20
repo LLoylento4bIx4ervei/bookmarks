@@ -30,8 +30,7 @@ func seeBookmarks(bookmarks map[int]string) {
 	}
 }
 
-func addBookmarks(bookmarks map[int]string) map[int]string {
-
+func addBookmarks(bookmarks map[int]string) {
 	var bokKey int
 	fmt.Println("Введите ключ: ")
 	fmt.Scan(&bokKey)
@@ -39,16 +38,13 @@ func addBookmarks(bookmarks map[int]string) map[int]string {
 	fmt.Println("Введите значение: ")
 	fmt.Scan(&bokVal)
 	bookmarks[bokKey] = bokVal
-	return bookmarks
 }
 
-func delBookmarks(bookmarks map[int]string) map[int]string {
-
+func delBookmarks(bookmarks map[int]string) {
 	var delKey int
 	fmt.Println("Ведите ключ для удаления закладки: ")
 	fmt.Scan(&delKey)
 	delete(bookmarks, delKey)
-	return bookmarks
 }
 
 func realizeMenu(bookmarks map[int]string) {
@@ -56,7 +52,6 @@ func realizeMenu(bookmarks map[int]string) {
 		fmt.Println("Закладки")
 		answer := menu()
 		switch answer {
-
 		case 1:
 			seeBookmarks(bookmarks)
 		case 2:
